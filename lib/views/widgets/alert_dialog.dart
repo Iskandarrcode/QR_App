@@ -25,7 +25,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Color(0xffFDB623),
+      backgroundColor: const Color(0xffFDB623),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

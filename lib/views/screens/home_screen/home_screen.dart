@@ -22,8 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(
           () {
             result = scanData;
-            print("+++ KELAYOTGAN LINK +++");
-            print(result!.code);
             if (result!.code != null) {
               controller.pauseCamera();
 

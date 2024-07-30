@@ -4,7 +4,7 @@ import 'package:qr_scaner/views/screens/qr_generate_screen/qr_generate.dart';
 
 // ignore: must_be_immutable
 class NavigationBars extends StatefulWidget {
-  NavigationBars({super.key});
+  const NavigationBars({super.key});
 
   @override
   State<NavigationBars> createState() => _NavigationBarsState();
@@ -15,7 +15,7 @@ class _NavigationBarsState extends State<NavigationBars> {
   List<Widget> pages = [
     const QrGenerateScreen(),
     const HomeScreen(),
-    Placeholder(),
+    const Placeholder(),
   ];
 
   @override

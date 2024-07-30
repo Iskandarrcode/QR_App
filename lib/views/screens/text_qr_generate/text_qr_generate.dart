@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qr_scaner/views/screens/navigation_bar/navigation_bar.dart';
-import 'package:qr_scaner/views/screens/qr_generate_screen/qr_generate.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class TextQrGenerate extends StatefulWidget {
@@ -33,7 +32,7 @@ class _TextQrGenerateState extends State<TextQrGenerate> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return NavigationBars();
+                              return const NavigationBars();
                             },
                           ),
                         );
@@ -116,6 +115,7 @@ class _TextQrGenerateState extends State<TextQrGenerate> {
                                 if (textController.text.isEmpty) {
                                   return "Iltimos text kiriting!";
                                 }
+                                return null;
                               },
                             ),
                           ],

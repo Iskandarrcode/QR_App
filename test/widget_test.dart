@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:qr_scaner/main.dart';
 import 'package:qr_scaner/views/screens/qr_generate_screen/qr_generate.dart';
 
 void main() {
