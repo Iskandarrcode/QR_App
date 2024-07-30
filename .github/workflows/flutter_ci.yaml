@@ -5,7 +5,7 @@ name: lesson87_cicd
 on:
   push:
     branches:
-      - main
+      - MASTERR
 
 # on: push    # Default will running for every branch.
 
