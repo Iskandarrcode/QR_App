@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scaner/views/screens/navigation_bar/navigation_bar.dart';
+import 'package:qr_scaner/views/screens/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBars(),
+      home: SplashScreen(),
     );
   }
 }

@@ -87,7 +87,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               ),
               onPressed: () {
                 _launchUrl(url: Uri.parse(widget.result));
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
               },
             ),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_scaner/views/screens/app_info/info_screen.dart';
 import 'package:qr_scaner/views/screens/home_screen/home_screen.dart';
 import 'package:qr_scaner/views/screens/qr_generate_screen/qr_generate.dart';
 
@@ -15,7 +16,7 @@ class _NavigationBarsState extends State<NavigationBars> {
   List<Widget> pages = [
     const QrGenerateScreen(),
     const HomeScreen(),
-    const Placeholder(),
+    const InfoScreen(),
   ];
 
   @override
@@ -39,7 +40,7 @@ class _NavigationBarsState extends State<NavigationBars> {
                 setState(() {});
               },
               icon: const Icon(
-                Icons.qr_code_2,
+                Icons.document_scanner_outlined,
                 color: Colors.white,
               ),
             ),
@@ -53,9 +54,12 @@ class _NavigationBarsState extends State<NavigationBars> {
                 curIndex = 1;
                 setState(() {});
               },
-              icon: const Icon(
-                Icons.qr_code_scanner_sharp,
-                color: Colors.white,
+              icon: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.qr_code_scanner_sharp,
+                  color: Colors.white,
+                ),
               ),
             ),
             IconButton(
@@ -69,7 +73,7 @@ class _NavigationBarsState extends State<NavigationBars> {
                 setState(() {});
               },
               icon: const Icon(
-                Icons.history,
+                Icons.info,
                 color: Colors.white,
               ),
             ),

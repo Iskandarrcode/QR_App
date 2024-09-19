@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scaner/views/screens/home_screen/home_screen.dart';
+import 'package:qr_scaner/views/screens/navigation_bar/navigation_bar.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class Onboarding1 extends StatefulWidget {
@@ -40,7 +40,7 @@ class _Onboarding1State extends State<Onboarding1> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const HomeScreen();
+                      return const NavigationBars();
                     },
                   ),
                 );

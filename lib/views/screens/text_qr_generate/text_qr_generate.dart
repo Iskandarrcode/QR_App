@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qr_scaner/views/screens/navigation_bar/navigation_bar.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class TextQrGenerate extends StatefulWidget {
@@ -88,35 +89,30 @@ class _TextQrGenerateState extends State<TextQrGenerate> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 30),
-                            const Text(
-                              "Text",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Color(0xffD9D9D9),
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            TextFormField(
-                              controller: textController,
-                              style: const TextStyle(
-                                color: Colors.white,
-                              ),
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                            const SizedBox(height: 40),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: TextFormField(
+                                controller: textController,
+                                style: const TextStyle(
+                                  color: Colors.white,
                                 ),
-                                hintText: "Enter Text",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey.shade600,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  hintText: "Enter Text",
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey.shade600,
+                                  ),
                                 ),
+                                validator: (value) {
+                                  if (textController.text.isEmpty) {
+                                    return "Iltimos text kiriting!";
+                                  }
+                                  return null;
+                                },
                               ),
-                              validator: (value) {
-                                if (textController.text.isEmpty) {
-                                  return "Iltimos text kiriting!";
-                                }
-                                return null;
-                              },
                             ),
                           ],
                         ),
@@ -127,24 +123,45 @@ class _TextQrGenerateState extends State<TextQrGenerate> {
                               showDialog(
                                 context: context,
                                 builder: (context) {
-                                  return AlertDialog(
-                                    title: const Center(
-                                      child: Text(
-                                        "Text QR",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  return Dialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text(
+                                            "Text QR",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          SizedBox(
+                                            width: 200,
+                                            height: 200,
+                                            child: QrImageView(
+                                              data: textController.text,
+                                              version: QrVersions.auto,
+                                              size: 200.0,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          IconButton(
+                                            onPressed: () {
+                                              Share.share(
+                                                  'QR Code text: ${textController.text}');
+                                            },
+                                            icon: const Icon(Icons.share),
+                                            color: const Color.fromARGB(
+                                                202, 5, 85, 232),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    actions: [
-                                      Center(
-                                        child: QrImageView(
-                                          data: textController.text,
-                                          version: QrVersions.auto,
-                                          size: 200.0,
-                                        ),
-                                      ),
-                                    ],
                                   );
                                 },
                               );

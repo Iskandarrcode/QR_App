@@ -106,14 +106,11 @@ class _HomeScreenState extends State<HomeScreen> {
       //     IconButton(
       //       onPressed: () {
       //         _launchUrl(url: Uri.parse(""));
-
       //         Share.share(
       //           "Nimalardur jo'natmoqchiman",
       //           subject: "Yangi post !",
       //         );
-
       //         Share.share('Bu matnni WhatsApp orqali yuborish uchun tanlang.');
-
       //         final result = await Share.shareXFiles(
       //           [XFile('${directory.path}/image.jpg')],
       //             text: 'Yaxshi rasm',
